@@ -12,6 +12,19 @@
 
 .flex-item {
     position: relative;
+    flex-wrap: wrap;
+    /* background-color: red; */
+}
+.flex-item-text {
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+    background-color:#f4daf4;
+    padding: 1%;
+    justify-content: space-evenly;
+    margin:4%;
+    border-radius: 10px;
+    border: 5px solid rgb(81, 79, 79);
     /* background-color: red; */
 }
 
@@ -25,6 +38,16 @@
     border-radius: 8px;
     width: 38vw;
     height: 23vw;
+    border: 5px solid rgb(99, 99, 134);
+}
+
+.image-pol {
+    display:flex;
+    flex-wrap:wrap;
+    border-radius: 8px;
+    width: 25vw;
+    height: 37vw;
+    border: 5px solid rgb(101, 79, 102);
 }
 .overlay {
     /* display: flex; */
@@ -39,11 +62,18 @@
     border-radius: 5%;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
+    border: 1px solid black;
 
     /* left: -10% */
     /* border-radius: 5px; */
 }
 
+.overlay a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 1.5px;
+}
 
 .button {
     background-color: aliceblue;
@@ -55,10 +85,23 @@
 
 
 /* text designs */
-.text{
+.text {
     color:red;
     font-family: 'Roboto', sans-serif;
 }
+.main-head {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-style: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 400%;
+}
+
+
+
 .header-text {
     color: black;
     font-family: 'Roboto', sans-serif;
@@ -67,13 +110,14 @@
     letter-spacing: 1.5px;
     font-style: bold;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-size: 4vw;
+    font-size: 160%;
+    text-decoration: none;
 }
 .basic-text {
     color: black;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 20px;
     word-wrap: break-word;
     /* padding-right: 10vw; */
 }
@@ -117,30 +161,44 @@
 }
 
 /* carousel stuff */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-.carousel-slide {
-    display: none;
-    position: absolute;
-    width: 100%;
-  }
-  
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-  }
-/* hmm */
 
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: rgb(224, 187, 187);
+    width: 300px;
+    height: 50px;
+    max-width: 80%;
+    transition: 200ms ease-in-out;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.pop-header {
+    text-align: center;
+    padding: 10px 15px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    font-weight: bold;
+
+}
